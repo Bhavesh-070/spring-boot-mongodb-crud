@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.wenable</groupId>
-	<artifactId>WenableEmp-2UsingMongoDB</artifactId>
+	<artifactId>spring-boot-mongodb-crud</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>WenableEmp-2UsingMongoDB</name>
-	<description>Spring boot project using mongo db</description>
+	<name>spring-boot-mongodb-crud</name>
+	<description>Spring Boot RESTful API with MongoDB and CRUD Operations</description>
 	<url/>
 	<licenses>
 		<license/>
