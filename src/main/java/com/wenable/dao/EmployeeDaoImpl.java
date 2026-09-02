@@ -3,6 +3,8 @@ package com.wenable.dao;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -11,6 +13,8 @@ import com.wenable.repository.EmployeeRepository;
 
 @Repository
 public class EmployeeDaoImpl implements EmployeeDao {
+
+	private static final Logger log = LoggerFactory.getLogger(EmployeeDaoImpl.class);
 
 	@Autowired
 	EmployeeRepository employeeRepository;
@@ -32,9 +36,9 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 			employeeRepository.save(employee);
 
-			System.out.println("Employee updated with id " + empid);
+			log.info("Employee updated with id {}", empid);
 		} else {
-			System.out.println("Employee not found with id " + empid);
+			log.warn("Employee not found with id {}", empid);
 		}
 		
 	}
@@ -48,9 +52,9 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	public void deleteEmpById(String empid) {
 		if (employeeRepository.existsById(empid)) {
 			employeeRepository.deleteById(empid);
-			System.out.println("Employee deleted with id " + empid);
+			log.info("Employee deleted with id {}", empid);
 		} else {
-			System.out.println("No employee found with id " + empid);
+			log.warn("No employee found with id {}", empid);
 		}
 	}
 
