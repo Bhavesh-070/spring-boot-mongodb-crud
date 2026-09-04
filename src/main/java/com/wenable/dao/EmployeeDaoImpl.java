@@ -11,6 +11,12 @@ import org.springframework.stereotype.Repository;
 import com.wenable.entity.Employee;
 import com.wenable.repository.EmployeeRepository;
 
+/**
+ * MongoDB-backed {@link EmployeeDao}, delegating persistence to {@link EmployeeRepository}.
+ *
+ * <p>Update and delete are existence-checked: a missing identifier is logged as a warning
+ * rather than raising an error.
+ */
 @Repository
 public class EmployeeDaoImpl implements EmployeeDao {
 

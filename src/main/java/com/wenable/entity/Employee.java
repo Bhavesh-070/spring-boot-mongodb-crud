@@ -4,6 +4,11 @@ import org.springframework.data.annotation.Id;
 
 import jakarta.validation.constraints.NotBlank;
 
+/**
+ * An employee record stored in MongoDB.
+ *
+ * <p>The employee name is required; the number and designation are optional.
+ */
 public class Employee {
 
 	@Id
